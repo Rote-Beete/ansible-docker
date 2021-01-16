@@ -1,5 +1,20 @@
 FROM python:3.8-alpine
 
+# env - paths
+ENV USER="ansible"
+ENV GROUP="ansible"
+ENV HOME="/home/$USER"
+ENV APP_HOME="$HOME/work"
+ENV PATH="$HOME/env/bin:$PATH"
+ENV VIRTUAL_ENV="$HOME/env"
+
+# env - python tweeking
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# create directories
+RUN mkdir "$HOME" "$APP_HOME" "$APP_HOME/static"
+
 # include files
 COPY requirements.txt .
 
