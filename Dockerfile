@@ -24,4 +24,5 @@ RUN set -eux \
     && apk add --virtual rundeps $runDeps \
     && apk del .build-deps
 
+# set entrypoint
 ENTRYPOINT ["ansible-playbook"]
