@@ -1,5 +1,8 @@
 FROM python:3.8-alpine
 
+# include files
+COPY requirements.txt .
+
 # setup
 RUN set -eux \
     && apk add --no-cache \
