@@ -13,7 +13,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # create directories
-RUN mkdir "$HOME" "$APP_HOME" "$APP_HOME/static"
+RUN mkdir "$HOME" "$APP_HOME"
 
 # include files
 COPY requirements.txt .
