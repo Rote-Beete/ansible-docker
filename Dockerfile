@@ -32,7 +32,7 @@ RUN set -eux \
         | xargs -r apk info --installed \
         | sort -u)" \
     && apk add --virtual rundeps $runDeps \
-    && apk del .build-deps \
+    && apk del .build-deps
 
 
 # set working directory
