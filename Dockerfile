@@ -20,6 +20,7 @@ COPY requirements.txt .
 
 # setup
 RUN set -eux \
+    && addgroup -S "$GROUP" && adduser -S -G "$GROUP" "$USER" \
     && apk add --no-cache \
         openssh-keygen \
     && apk add --no-cache --virtual .build-deps \
@@ -37,7 +38,14 @@ RUN set -eux \
         | xargs -r apk info --installed \
         | sort -u)" \
     && apk add --virtual rundeps $runDeps \
-    && apk del .build-deps
+    && apk del .build-deps \
+    && chown -R "$USER:$GROUP" "$HOME"
+
+# define app user
+USER "$USER"
+
+# set working directory
+WORKDIR "$APP_HOME"
 
 # set entrypoint
 ENTRYPOINT ["ansible-playbook"]
