@@ -1,10 +1,10 @@
 FROM python:3.8-alpine
 
 # setup
-RUN set -ex \
+RUN set -eux \
     && apk add --no-cache \
         openssh-keygen \
-    && apk add --no-cache --virtual .build-deps
+    && apk add --no-cache --virtual .build-deps \
         build-base \
         gcc \
         libffi-dev \
