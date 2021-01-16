@@ -1,7 +1,7 @@
 FROM python:3.8-alpine
 
 # env - paths
-ENV APP_HOME="$HOME/work"
+ENV HOME="/usr/local/bin"
 ENV PATH="$HOME/env/bin:$PATH"
 ENV VIRTUAL_ENV="$HOME/env"
 
@@ -33,10 +33,6 @@ RUN set -eux \
         | sort -u)" \
     && apk add --virtual rundeps $runDeps \
     && apk del .build-deps
-
-
-# set working directory
-WORKDIR "$APP_HOME"
 
 # set entrypoint
 ENTRYPOINT ["ansible-playbook"]
