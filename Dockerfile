@@ -16,7 +16,7 @@ RUN set -eux \
         python3-dev \
     && pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt \
-    && runDeps="$(scanelf --needed --nobanner --recursive $HOME/env \
+    && runDeps="$(scanelf --needed --nobanner --recursive / \
         | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
         | sort -u \
         | xargs -r apk info --installed \
