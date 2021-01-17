@@ -1,4 +1,4 @@
-# Docker Container Name
+# Ansible Docker Container
 
 This container allows to run ansible and ansible-lint.
 
