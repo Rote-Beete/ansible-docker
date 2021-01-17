@@ -40,7 +40,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Michael Gerlach** - *Initial work* - [n3ph](https://github.com/n3ph)
 
-See also the list of [contributors](https://github.com/rotebeete/ansible-docker/contributors) who
+See also the list of [contributors](https://github.com/Rote-Beete/ansible-docker/contributors) who
 participated in this project.
 
 ## License
