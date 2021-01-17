@@ -34,7 +34,7 @@ docker run --entrypoint ansible-lint -v "${PWD}":/work:ro rotebeete/ansible play
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the
-[tags on this repository](https://github.com/your/repository/tags).
+[tags on this repository](https://github.com/Rote-Beete/ansible-docker/tags).
 
 ## Authors
 
