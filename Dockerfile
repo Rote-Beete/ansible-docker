@@ -34,5 +34,8 @@ RUN set -eux \
     && apk add --virtual rundeps $runDeps \
     && apk del .build-deps
 
+# set working dir
+WORKDIR /work
+
 # set entrypoint
 ENTRYPOINT ["ansible-playbook"]
