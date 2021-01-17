@@ -34,6 +34,3 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           repository: rotebeete/ansible
-
-      - name: Docker image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
