@@ -16,6 +16,7 @@ COPY requirements.txt .
 RUN set -eux \
     && apk add --no-cache \
         openssh-keygen \
+        openssh-client \
     && apk add --no-cache --virtual .build-deps \
         build-base \
         gcc \
